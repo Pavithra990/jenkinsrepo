@@ -1,17 +1,19 @@
 pipeline {
-  agent any
+    agent any
 
-  stages {
-    stage('Clone Code') {
-      steps {
-        git 'https://github.com/your-username/jenkins-demo.git'
-      }
-    }
+    stages {
+        stage('Clone Code') {
+            steps {
+                git branch: 'main',
+                    url: 'https://github.com/Pavithra990/jenkinsrepo.git',
+                    credentialsId: 'github-credentials'
+            }
+        }
 
-    stage('Run Script') {
-      steps {
-        sh 'bash hello.sh'
-      }
+        stage('Run Script') {
+            steps {
+                sh 'bash hello.sh'
+            }
+        }
     }
-  }
 }
