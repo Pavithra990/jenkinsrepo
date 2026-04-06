@@ -5,8 +5,7 @@ pipeline {
         stage('Clone Code') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/Pavithra990/jenkinsrepo.git',
-                    credentialsId: 'github-credentials'
+                    url: 'https://github.com/Pavithra990/jenkinsrepo.git'
             }
         }
 
